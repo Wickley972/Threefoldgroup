@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .menu {
+            background-color: #f8f8f8;
+            padding: 10px;
+        }
+        
+        .menu a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        
+        .box {
+            flex: 0 0 calc(50% - 10px);
+            border: 1px solid #ccc;
+            margin: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .box a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        {% block navbar %}
+        <div class="menu">
+            <a href="/">Acceuil</a>
+            <a href="/import">Import</a>
+            <a href="/export">Export</a>
+            <a href="/outils">Outils</a>
+        </div>
+        {% endblock navbar %}
+        
+        <div id="content" class="container">
+            {% block content %}
+            
+            {% endblock content %}
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Excel2Csv{% endblock %}
+
+{% block content %}
+    <h3>Télécharger un/ou plusieurs fichiers Excel</h3>
+    <h3>Choisissez le déliminateur que vous voudriez en sortie des fichiers csv</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+{% endblock %}

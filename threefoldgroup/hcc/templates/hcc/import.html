@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Import{% endblock %}
+
+{% block content %}
+    <br/>
+    <br/>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+        {{ form.as_p }}
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+{% endblock %}

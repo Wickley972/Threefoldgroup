@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}BTA{% endblock %}
+
+{% block content %}
+    <h3>Télécharger un/ou plusieurs fichiers BTA</h3>
+    <h3>Choisissez le déliminateur dans vos fichiers BTA</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+{% endblock %}
